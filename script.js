@@ -11,6 +11,12 @@ function writePassword() {
     var passwordLength = Number(
       prompt("Choose a password length between 8 and 128 characters")
     );
+    //check password length
+    if (passwordLength < 8 || passwordLength > 128) {
+      window.alert("password must be min 8 characters and max 128");
+      return;
+    }
+
     var isLowerCase = confirm("include lowercase characters?");
     var isUpperCase = confirm("include uppercase characters?");
     var isNumber = confirm("include numbers?");
