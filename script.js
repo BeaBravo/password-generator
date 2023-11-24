@@ -95,7 +95,6 @@ function writePassword() {
     console.log("special characters", specialChar);
     console.log("characters", characters);
   }
-
   passwordText.value = password;
 }
 
