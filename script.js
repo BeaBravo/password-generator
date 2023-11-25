@@ -3,11 +3,8 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  // var password = generatePassword();
   var password = "";
   var passwordText = document.querySelector("#password");
-
-  // function generatePassword() {
   var passwordLength = Number(
     prompt("Choose a password length between 8 and 128 characters")
   );
@@ -189,8 +186,11 @@ function writePassword() {
   }
 
   // create random password with the characters and length selected
-  var index = Math.floor(Math.random() * characters.length);
-  password = characters[index];
+  for (i = 0; i < passwordLength; i++) {
+    var randomIndex = Math.floor(Math.random() * characters.length);
+    var randomCharacter = characters[randomIndex];
+    password += randomCharacter;
+  }
 
   //console.log just for debugging
   console.log("password length", passwordLength);
@@ -199,8 +199,8 @@ function writePassword() {
   console.log("numbers", isNumber);
   console.log("special characters", specialChar);
   console.log("characters", characters);
-  console.log("index", index);
-  // }
+  console.log("password length", password.length);
+
   passwordText.value = password;
 }
 
