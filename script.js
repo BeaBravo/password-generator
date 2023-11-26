@@ -180,9 +180,13 @@ function writePassword() {
   } else if (!isLowerCase && !isUpperCase && !isNumber && specialChar) {
     console.log("only use special characters");
     characters = charactersSpecial;
-  } //if they're all false
+  } //if they're all false return the loop and tell user to try again
   else {
+    alert(
+      "You must select at least one of character selection, please try again!"
+    );
     console.log("one of the requirements must be selected");
+    return;
   }
 
   // create random password with the characters and length selected
