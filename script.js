@@ -8,7 +8,7 @@ function writePassword() {
   var passwordLength = Number(
     prompt("Choose a password length between 8 and 128 characters")
   );
-  //check password length
+  //check password length is between 8 and 128 characters
   if (passwordLength < 8 || passwordLength > 128) {
     window.alert("password must be min 8 characters and max 128");
     return;
